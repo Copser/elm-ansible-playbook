@@ -2,7 +2,7 @@
 # setup elm init
 ---
 - name: add elm and compile it from source
-  shell: wget "https://github.com/elm/compiler/release/download/0.19.0/binaries-for-linux.tar.gz"
+  shell: wget "https://github.com/elm/compiler/releases/download/0.19.0/binaries-for-linux.tar.gz"
   args:
     creates: /etc/apt/source.list.d/elmsourse.list
   tags:
@@ -16,7 +16,7 @@
     - confuguration
 
 - name: move elm to bin
-  shell: sudo mv /usr/local/bin/
+  shell: mv elm /usr/local/bin/
   tags:
     - configuration
 
