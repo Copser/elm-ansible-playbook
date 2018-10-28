@@ -1,0 +1,11 @@
+---
+# include all yml setup files
+
+- include: setup_system_dependencies.yml
+  tags: deploy
+
+- include: setup_elm.yml
+  tags: deploy
+
+#- include: setup_elm_packages.yml
+#  tags: deploy

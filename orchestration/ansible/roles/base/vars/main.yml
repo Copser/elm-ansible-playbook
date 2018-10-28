@@ -1,0 +1,12 @@
+---
+# Swap
+create_swap_file: no
+swap_file_path: /swapfile
+swap_file_size_kb: 512
+
+# Application settings.
+application_log_dir: "{{ logs_path }}"
+application_log_file: "{{ application_log_dir }}/gunicorn_supervisor.log"
+build_log_file: "{{ application_log_dir }}/gulp_supervisor.log"
+
+requirements_file: "{{ application_path }}/requirements.txt"

@@ -1,0 +1,39 @@
+---
+# Application user/group
+
+application_user: vagrant
+application_group: vagrant
+
+# Vagrant settings.
+auto_virtualenv: yes
+auto_virtualenv_user: vagrant
+
+# Git settings.
+setup_git_repo: no
+setup_vagrant_source: yes
+git_branch: master
+
+# Gunicorn settings. For the number of workers, a good rule to follow is
+# 2 x number of CPUs + 1
+gunicorn_num_workers: 3
+
+# Setting this to 1 will restart the Gunicorn process each time
+# you make a request, basically reloading the code. Very handy
+# when developing. Set to 0 for unlimited requests (default).
+gunicorn_max_requests: 0
+gunicorn_timeout_seconds: 300
+gunicorn_use_reload: yes
+server_user: "{{ application_user }}"
+server_group: "{{ application_group }}"
+
+# Nginx settings.
+nginx_server_name: "localhost"
+nginx_strong_dh_group: no
+nginx_host_static_files: yes
+nginx_disable_sendfile: yes
+is_ssl: no
+
+# Application settings.
+raven_enabled: 0
+raven_dsn: ""
+domain: 'http://localhost:8888'

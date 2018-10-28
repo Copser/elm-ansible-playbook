@@ -1,0 +1,14 @@
+---
+# default variables for this role ( see https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html )
+# defaults file for elm-role
+
+# minimum elm version is latest
+# the version is compiled from the source
+elm-default-version: '0.19.0'
+
+# install more elm packages, by removing the brackets and adding
+# elm_packages:
+#   - name: 'elm/http'
+#     versions: 0.1.x
+
+elm-packages: []

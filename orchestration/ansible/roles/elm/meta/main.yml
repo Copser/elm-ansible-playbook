@@ -1,0 +1,39 @@
+galaxy_info:
+  author: Petar Pilipovic
+  description: Setup latest elm for you're FE project
+  company: "iToucan GmbH"
+
+  # If the issue tracker for your role is not on github, uncomment the
+  # next line and provide a value
+  # issue_tracker_url: http://example.com/issue/tracker
+
+  license: "license (BSD, MIT)"
+
+  min_ansible_version: 2.4
+
+  platforms:
+    - name: Debian
+      versions:
+        - wheezy
+        - jessie
+        - stretch
+    - name: Ubuntu
+      versions:
+        - precise
+        - trusty
+        - xenial
+        - bionic
+    - name: Fedora
+      versions:
+        - all
+
+
+  galaxy_tags:
+    - web
+    - system
+    - development
+
+dependencies: []
+  # List your role dependencies here, one per line.
+  # Be sure to remove the '[]' above if you add dependencies
+  # to this list.

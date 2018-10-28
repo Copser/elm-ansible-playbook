@@ -1,0 +1,26 @@
+# install elm, unpack binaries, move to /usr/local/bin/
+# setup elm init
+---
+- name: add elm and compile it from source
+  shell: wget "https://github.com/elm/compiler/release/download/0.19.0/binaries-for-linux.tar.gz"
+  args:
+    creates: /etc/apt/source.list.d/elmsourse.list
+  tags:
+    - confuguration
+
+- name: unpack elm binaries
+  shell: tar xzf binaries-for-linux.tar.gz
+  args:
+    creates: /etc/apt/source.list.d/elmunpacksource.list
+  tags:
+    - confuguration
+
+- name: move elm to bin
+  shell: sudo mv /usr/local/bin/
+  tags:
+    - configuration
+
+- name: setup elm project
+  shell: elm init
+  tags:
+    - configuration

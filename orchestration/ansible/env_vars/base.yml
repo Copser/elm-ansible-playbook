@@ -1,0 +1,10 @@
+---
+
+project_name: itoucan_platform
+application_name: itoucan
+project_path: "/srv/example.com"
+
+application_path: "{{ project_path }}/src/"
+logs_path: "{{ project_path }}/../logs"
+
+facts_file: 'example.conf'

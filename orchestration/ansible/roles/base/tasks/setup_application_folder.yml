@@ -1,0 +1,8 @@
+---
+
+- name: Create the application log folder
+  file: path={{ application_log_dir }}
+        owner={{ server_user }}
+        group={{ server_group }}
+        mode=0774
+        state=directory

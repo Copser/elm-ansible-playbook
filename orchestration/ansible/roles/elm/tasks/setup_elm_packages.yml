@@ -1,0 +1,9 @@
+---
+# install elm packages
+#- name: install elm packages
+#  elm:
+#    name: "{{ item.name }}"
+#    version: "{{ item.version | default('latest') }}"
+#  with_items: "{{ elm_packages }}"
+#  tags:
+#    - configuration

@@ -1,0 +1,59 @@
+---
+
+- include: create_swap_file.yml
+  when: create_swap_file
+  tags: swap
+
+- name: Ensure bash, OpenSSL, and libssl are the latest versions
+  apt: name={{ item }} update_cache={{ update_apt_cache }} state=latest
+  with_items:
+    - bash
+    - openssl
+    - libssl-dev
+    - libssl-doc
+    - python-openssl
+  tags: packages
+
+- name: Install base packages
+  apt: name={{ item }} update_cache={{ update_apt_cache }} force=yes state=installed
+  with_items:
+    - build-essential
+    - acl
+    - ntp
+    - htop
+    - git
+    - vim
+    - ruby
+    - libpq-dev
+    - python-dev
+    - python-pip
+    - python3
+    - python3-dev
+    - python3-pip
+    - python3-pycurl
+    - supervisor
+    - libffi-dev
+    - libav-tools
+    - libmagic-dev
+    - dirmngr
+    - gnupg
+    - apt-transport-https
+    - ca-certificates
+    - ruby-sass
+    - ruby-compass
+    - libjpeg-dev
+    - libtiff-dev
+    - zlib1g-dev
+    - libfreetype6-dev
+    - liblcms2-dev
+
+  tags: packages
+
+- name: Upgrade pip3
+  pip: name=pip state=latest executable=pip3
+  tags: packages
+
+- include: create_users_and_groups.yml
+
+- include: setup_application_folder.yml
+  tags: appication
