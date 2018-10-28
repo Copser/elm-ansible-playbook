@@ -46,7 +46,7 @@ Vagrant.configure("2") do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   config.vm.synced_folder ".", "/vagrant-nfs", type: :nfs, mount_options: ['rw', 'vers=3', 'tcp', 'fsc' ,'actimeo=2']
-  config.bindfs.bind_folder "/vagrant-nfs", "/srv/itoucan.de", :owner => "vagrant", :group => "vagrant"
+  config.bindfs.bind_folder "/vagrant-nfs", "/srv/example.com", :owner => "vagrant", :group => "vagrant"
 
   config.vm.network :private_network, ip: "192.168.44.88"
 
@@ -66,7 +66,7 @@ Vagrant.configure("2") do |config|
   # information on available options.
 
   config.vm.provider :virtualbox do |vb|
-    vb.customize ["modifyvm", :id, "--name", "iToicanVM", "--memory", "2048"]
+    vb.customize ["modifyvm", :id, "--name", "exampleVM", "--memory", "2048"]
   end
 
   # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
@@ -88,7 +88,7 @@ Vagrant.configure("2") do |config|
    config.vm.provision "ansible_local" do |ansible|
     ansible.version = "2.5.0"
     ansible.install_mode = "pip"
-    ansible.provisioning_path = "/srv/itoucan.de"
+    ansible.provisioning_path = "/srv/example.com"
     ansible.playbook = "orchestration/ansible/vagrant.yml"
     ansible.verbose = "vvv"
    end
