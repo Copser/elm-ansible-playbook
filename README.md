@@ -20,7 +20,7 @@ Note:
 
 Maybe you don't need to install `vagrant-bindfs`, on initial startup of the machine Vagrant will notify you.
 
-## StarUp iToucan project
+## StarUp Elm project
 
 Git clone the project in any folder you like, and from the core folder in this case it's `elm-ansible-playbook` run
 
